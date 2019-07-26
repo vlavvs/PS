@@ -9,13 +9,13 @@ $Date = $Date.AddDays($DayExpire - $DayExpire * 2) #Пеервод в отриц
 $NumberComputerFound = 0
 
 FOREACH ($Computer in $ComputerCollection)
-{
-IF ($Computer.lastlogondate -lt $date) 
-{
-Write-Host '-----'
-Write-Host $Computer.Name  ' последний вход '  $Computer.LastLogonDate.DateTime
-$NumberComputerFound++
-}
-}
+  {
+  IF ($Computer.lastlogondate -lt $date) 
+    {
+    Write-Host '-----'
+    Write-Host $Computer.Name  ' последний вход '  $Computer.LastLogonDate.DateTime
+    $NumberComputerFound++
+    }
+  }
 Write-Host 'Всего компьютеров: '  $NumberComputerFound
 pause
